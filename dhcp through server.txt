@@ -1,0 +1,19 @@
+DHCP through server
+Method 2
+
+
+enable
+config ter
+inter fa 0/0
+ip address 192.168.1.1 255.255.255.0
+no shut
+exit
+
+Now connect server
+
+Open server and give it IP
+
+IP = 192.168.1.4
+Deafault gateway = 192.168.1.1
+
+Now go to services and do the rest of work

@@ -1,0 +1,34 @@
+VTP
+
+Apply on 4 switches
+
+en
+show vtp status to see vtp
+
+First set domain name
+
+config terminal
+vtp domain vlan1
+
+Now to apply in all switches use following commands
+
+int fas 0/1
+switchport mode trunk
+
+
+
+exit
+vlan 2
+name abc
+end
+
+
+fro client mode
+
+vtp client mode
+
+
+or transparent mode
+
+vtp mode transparent
+

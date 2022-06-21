@@ -1,0 +1,50 @@
+VOIP
+
+select router 2811
+first switch
+
+give ip to the router
+
+enable
+config ter
+inter fa 0/0
+ip address 192.168.1.1 255.255.255.0
+no shut
+exit
+
+now applying dhcp to router
+
+
+ip dhcp pool voip 1
+network 192.168.1.0 255.255.255.0
+default router 192.168.1.1
+option 150 192.168.1.1
+exit
+telephony- services
+max-dn 5
+max-ephones 5
+ip source address 192.168.1.1 port 2000
+auto assign 1 to 9
+
+
+Now move to switch
+
+enable
+config ter
+
+now applying vlan
+
+interface range fa 0/2 - fa 0/5
+switchport mode access
+switchport voice vlan 1
+
+
+Go back to router
+
+exit
+
+ephone-dn 1
+number 12345
+exit
+
+Same for other phones

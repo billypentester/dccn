@@ -1,0 +1,81 @@
+Area 2 
+Router 2 Applying DCHP
+
+Router>
+Router>en
+Router#conf
+Router#configure ter
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int
+Router(config)#interface fa
+Router(config)#interface se
+Router(config)#interface serial 2/0
+Router(config-if)#ip ad
+Router(config-if)#ip address 192.168.1.2 255.255.255.0
+Router(config-if)#no sh
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#inte
+Router(config)#interface fa
+Router(config)#interface fastEthernet 0//0
+                                        ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#interface fastEthernet 0/0
+Router(config-if)#ip ad
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+% 192.168.1.0 overlaps with Serial2/0
+Router(config-if)#ip address 192.168.2.1 255.255.255.0
+Router(config-if)#no shut
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#inte
+Router(config)#interface fa
+Router(config)#interface fastEthernet 1/0
+Router(config-if)#ip ad
+Router(config-if)#ip address 192.168.2.2 255.255.255.0
+% 192.168.2.0 overlaps with FastEthernet0/0
+Router(config-if)#ip address 192.168.3.1 255.255.255.0
+Router(config-if)#no shu
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet1/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#ip dh
+Router(config)#ip dhcp pool osama
+Router(dhcp-config)#ip dh
+Router(dhcp-config)#netw
+Router(dhcp-config)#network 192.168.1.0 255.255.255.0
+Router(dhcp-config)#def
+Router(dhcp-config)#default-router 192.168.1.1
+Router(dhcp-config)#net
+Router(dhcp-config)#network 192.168.2.0 255.255.255.0
+Router(dhcp-config)#de
+Router(dhcp-config)#default-router 192.168.2.1
+Router(dhcp-config)#%DHCPD-4-PING_CONFLICT: DHCP address conflict:  server pinged 192.168.2.1.
+
+Router(dhcp-config)#
+Router(dhcp-config)#ne
+Router(dhcp-config)#network 192.168.3.0 255.255.255.0
+Router(dhcp-config)#de
+Router(dhcp-config)#default-router 192.168.3.1

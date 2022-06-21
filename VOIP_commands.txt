@@ -1,0 +1,37 @@
+﻿----- Assign IP to router -----
+1. enable
+2. configure terminal
+3. interface fastEthernet 0/0
+4. ip address 192.168.1.1 255.255.255.0
+5. no shutdown
+
+
+----- DHCP -----
+1. ip dhcp pool [pool_name]
+2. network 192.168.1.0 255.255.255.0
+3. default-router 192.168.1.1
+4. option 150 ip 192.168.1.1
+
+
+----- Telephony Service on Router -----
+1. telephony-service
+2. max-dn [any-number]
+3. max-ephones [any-number]
+4. auto assign 1 to 9
+
+
+----- Switch Configuration -----
+1. enable
+2. configure terminal
+3. interface range fastEthernet 0/1 - fastEthernet 0/4
+4. switchport mode access
+5. switchport voice vlan 1
+
+
+
+
+----- Router -----
+1. ephone-dn 1
+2. number [any-digit-number]
+3. exit
+...............

@@ -1,0 +1,26 @@
+VLAN
+
+Make connection with switch
+
+Go to switch
+
+enable
+show vlan     #to see vlan status....
+
+config-ter
+vlan 2
+name abc
+exit
+
+Now give IP to all PC'S
+
+192.168.1.1
+
+dont give default gateway
+
+interface fa 0/1
+switchport mode
+switchport access vlan 2
+and same for adding all ports
+
+interf range fa 0/3 - fa 0/5 (For selecting all ports)

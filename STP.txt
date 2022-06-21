@@ -1,0 +1,16 @@
+STP
+
+enable
+config ter
+
+give ips to pc's
+
+192.168.1.1
+
+no spanning tree vlan 1
+
+enable
+config ter
+no spanning tree vlan 1
+
+in every switch

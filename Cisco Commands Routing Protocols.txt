@@ -1,0 +1,28 @@
+﻿--Router-to-PC-- 
+1. enable 
+2. configure terminal 
+3. interface fastEthernet 0/0 
+4. ip address 192.168.1.1 255.255.255.0 
+5. no shutdown 
+--Router-to-Router-- 
+1. enable 
+2. configure terminal 
+3. interface serail 2/0 (3/0) 
+4. ip address 192.168.5.1 255.255.255.0 
+5. no shutdown 
+--Routing Protocols-- 
+i) RIP (Routing Information Protocol) 
+1. enable 
+2. configure terminal 
+3. router rip 
+4. network 192.168.1.0 ........ 
+ii) EIGRP 
+1. enable 
+2. configure terminal 
+3. router eigrp (code: any number) 
+4. network 192.168.1.0 ........ 
+iii)OSPF (Open Shortest Path First) 
+1. enable 
+2. configure terminal 
+3. router ospf (code: any number) 
+4. network 192.168.1.0 0.0.0.255 area (code: any number) ...........
